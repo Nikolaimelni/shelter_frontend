@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/shelter_frontend/static/css/main.fbea8786.css",
-    "main.js": "/shelter_frontend/static/js/main.a8671c58.js",
+    "main.js": "/shelter_frontend/static/js/main.1d42d8fd.js",
     "static/js/787.c09a1498.chunk.js": "/shelter_frontend/static/js/787.c09a1498.chunk.js",
     "index.html": "/shelter_frontend/index.html",
     "main.fbea8786.css.map": "/shelter_frontend/static/css/main.fbea8786.css.map",
-    "main.a8671c58.js.map": "/shelter_frontend/static/js/main.a8671c58.js.map",
+    "main.1d42d8fd.js.map": "/shelter_frontend/static/js/main.1d42d8fd.js.map",
     "787.c09a1498.chunk.js.map": "/shelter_frontend/static/js/787.c09a1498.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fbea8786.css",
-    "static/js/main.a8671c58.js"
+    "static/js/main.1d42d8fd.js"
   ]
 }
