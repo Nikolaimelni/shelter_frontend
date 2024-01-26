@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/shelter_frontend/static/css/main.fbea8786.css",
-    "main.js": "/shelter_frontend/static/js/main.10186225.js",
-    "static/js/787.c09a1498.chunk.js": "/shelter_frontend/static/js/787.c09a1498.chunk.js",
-    "index.html": "/shelter_frontend/index.html",
-    "main.fbea8786.css.map": "/shelter_frontend/static/css/main.fbea8786.css.map",
-    "main.10186225.js.map": "/shelter_frontend/static/js/main.10186225.js.map",
-    "787.c09a1498.chunk.js.map": "/shelter_frontend/static/js/787.c09a1498.chunk.js.map"
+    "main.css": "/static/css/main.fbea8786.css",
+    "main.js": "/static/js/main.23185482.js",
+    "static/js/787.c09a1498.chunk.js": "/static/js/787.c09a1498.chunk.js",
+    "index.html": "/index.html",
+    "main.fbea8786.css.map": "/static/css/main.fbea8786.css.map",
+    "main.23185482.js.map": "/static/js/main.23185482.js.map",
+    "787.c09a1498.chunk.js.map": "/static/js/787.c09a1498.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fbea8786.css",
-    "static/js/main.10186225.js"
+    "static/js/main.23185482.js"
   ]
 }
