@@ -7,7 +7,7 @@ import styles from './App.css';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/shelter_frontend">
       <div className="App">
         <NavBar />
         <Routes>
@@ -35,7 +35,7 @@ const App = () => {
                 </div>
               </div>
               <div className="rightSide">
-                <img src="/back.png" alt="Animal Shelter" className="shelterImage" />
+                <img src={process.env.PUBLIC_URL + "/back.png"} alt="Animal Shelter" className="shelterImage" />
               </div>
             </div>
           } />
