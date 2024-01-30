@@ -53,7 +53,7 @@ const NavBar = ({ changeLanguage }) => {
           <NavLink to="/" className="text-white no-underline">{t('navbar.home')}</NavLink>
           <NavLink to="/find-nearest-shelter" className="text-white no-underline">{t('navbar.findNearestShelter')}</NavLink>
           <NavLink to="/find-shelter-in-your-town" className="text-white no-underline">{t('navbar.findShelterInYourTown')}</NavLink>
-          <NavLink to="/about-us" className="text-white no-underline">{t('navbar.aboutUs')}</NavLink>
+          {/* <NavLink to="/about-us" className="text-white no-underline">{t('navbar.aboutUs')}</NavLink> */}
           <div className="md:flex space-x-14 pr-3">
             <div className="language-selector md:flex space-x-14 pr-3">
             <button onClick={toggleLanguageModal} className="text-white no-underline">
@@ -70,7 +70,7 @@ const NavBar = ({ changeLanguage }) => {
         </div>
       </div>
       {isMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-main-color flex flex-col items-center py-5 z-10">
+        <div className="absolute top-full left-0 w-full bg-main-color flex flex-col items-center py-5 z-10 text-center">
           <NavLink to="/" className="text-white no-underline px-5 py-2 rounded hover:bg-white hover:bg-opacity-30 mb-2" onClick={toggleMenu}>
             {t('navbar.home')}
           </NavLink>
@@ -80,24 +80,21 @@ const NavBar = ({ changeLanguage }) => {
           <NavLink to="/find-shelter-in-your-town" className="text-white no-underline px-5 py-2 rounded hover:bg-white hover:bg-opacity-30 mb-2" onClick={toggleMenu}>
             {t('navbar.findShelterInYourTown')}
           </NavLink>
-          <NavLink to="/about-us" className="text-white no-underline px-5 py-2 rounded hover:bg-white hover:bg-opacity-30 mb-2" onClick={toggleMenu}>
+          {/* <NavLink to="/about-us" className="text-white no-underline px-5 py-2 rounded hover:bg-white hover:bg-opacity-30 mb-2" onClick={toggleMenu}>
             {t('navbar.aboutUs')}
-          </NavLink>
+          </NavLink> */}
 
-          <div className="md:flex space-x-14 pr-3">
-            <div className="language-selector md:flex space-x-14 pr-3">
-              <button onClick={toggleLanguageModal} className="text-white no-underline">
+              <button onClick={toggleLanguageModal} className="text-white no-underline px-5 py-2 rounded hover:bg-white hover:bg-opacity-30 mb-2">
                 {t('navbar.language')}
               </button>
+              <LanguageModal
+                isOpen={isLanguageModalOpen}
+                onClose={() => setIsLanguageModalOpen(false)}
+                changeLanguage={changeLanguage}
+                currentLanguage={i18n.language}
+              />
             </div>
-          </div>
-          <LanguageModal
-            isOpen={isLanguageModalOpen}
-            onClose={() => setIsLanguageModalOpen(false)}
-            changeLanguage={changeLanguage}
-            currentLanguage={i18n.language}
-          />
-        </div>
+
       )}
     </nav>
   );
