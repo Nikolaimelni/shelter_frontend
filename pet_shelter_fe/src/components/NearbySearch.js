@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
+
 
 const NearbySearch = () => {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [radius, setRadius] = useState(30);
+  const [searchPerformed, setSearchPerformed] = useState(false);
+  const { t } = useTranslation();
 
-  const handleFindNearby = async () => {
+  const handleSearch = async () => {
     if (!navigator.geolocation) {
       alert('Geolocation is not supported by your browser');
       return;
@@ -21,6 +25,7 @@ const NearbySearch = () => {
         });
         const uniqueResults = filterUniquePlaces(response.data);
         setResults(uniqueResults);
+        setSearchPerformed(true)
       } catch (error) {
         console.error('Error fetching nearby shelters: ', error);
         setResults([]);
@@ -48,22 +53,28 @@ const NearbySearch = () => {
   };
 
   return (
-    <div>
-      <div className="flex flex-wrap justify-between max-w-6xl mx-auto mt-5 gap-4">
-        <label className="flex flex-col mb-4" style={{ padding: '20px' }}>
-          <span className="text-main-color mb-1">Enter search radius in kilometers</span>
+    <div className="container mx-auto p-4">
+      <div className="space-y-4 md:w-1/2 md:mx-auto">
+        <div>
+          <label className="block text-gray-700 text-sm font-bold mb-2">
+            {t('citySearch.enterSearchRadius')}
+          </label>
           <input 
             type="number" 
             value={radius} 
-            onChange={(e) => setRadius(e.target.value*1000)} 
-            placeholder="Enter radius in kilometers"
-            className="p-2 border border-gray-400 rounded border-main-color"
+            onChange={(e) => setRadius(e.target.value)} 
+            placeholder={t('citySearch.enterSearchRadius')}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
-        </label>
-        <button onClick={handleFindNearby} disabled={loading} className="w-full lg:w-64 px-4 py-2 justify-center items-center rounded-lg bg-button-gradient text-white text-2xl font-semibold">
-          {loading ? 'Loading...' : 'Find Shelters Nearby'}
+        </div>
+        <button onClick={handleSearch} disabled={loading} className={`w-full bg-main-color text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}>
+          {t('citySearch.searchButton')}
         </button>
-        <p className="mt-4">Total {results.length} shelters within {radius} km from your location</p>
+        {searchPerformed && (
+          <p className="text-gray-600">
+            {t('nearbySearch.totalShelters', { count: results.length, radius: radius })}
+          </p>
+        )}
       </div>
       <div className="flex flex-wrap justify-center max-w-6xl mx-auto mt-5 gap-4">
         {results.map((place, index) => (
@@ -83,7 +94,7 @@ const NearbySearch = () => {
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-800 visited:text-purple-600"
             >
-              View on Google Maps
+              {t('nearbySearch.viewOnGoogleMaps')}              
             </a>
           </div>
         ))}
