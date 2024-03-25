@@ -16,7 +16,7 @@ const CitySearch = () => {
     const loadSuggestions = async () => {
       try {
         if (city.length > 2 && shouldLoadSuggestions) {
-          const response = await axios.get(`https://pet-shelter-8e7e5463f1bc.herokuapp.com/shelter/autocomplete`, {
+          const response = await axios.get(`https://heartfelt-flan-b32b1b.netlify.app/shelter/autocomplete`, {
             params: { input: city }
           });
           setSuggestions(response.data.predictions);
@@ -32,7 +32,7 @@ const CitySearch = () => {
   const handleSearch = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`https://pet-shelter-8e7e5463f1bc.herokuapp.com/shelter/find_places_in_city`, {
+      const response = await axios.get(`https://heartfelt-flan-b32b1b.netlify.app/shelter/find_places_in_city`, {
         params: { city: city, radius: radius * 1000 }
       });
       const uniqueResults = filterUniquePlaces(response.data);

@@ -20,7 +20,7 @@ const NearbySearch = () => {
     navigator.geolocation.getCurrentPosition(async (position) => {
       const { latitude, longitude } = position.coords;
       try {
-        const response = await axios.get(`https://pet-shelter-8e7e5463f1bc.herokuapp.com/shelter/find_places_nearby`, {
+        const response = await axios.get(`https://heartfelt-flan-b32b1b.netlify.app/shelter/find_places_nearby`, {
           params: { lat: latitude, lng: longitude, radius: radius * 1000 } 
         });
         const uniqueResults = filterUniquePlaces(response.data);

@@ -83,18 +83,16 @@ const NavBar = ({ changeLanguage }) => {
           {/* <NavLink to="/about-us" className="text-white no-underline px-5 py-2 rounded hover:bg-white hover:bg-opacity-30 mb-2" onClick={toggleMenu}>
             {t('navbar.aboutUs')}
           </NavLink> */}
-
-              <button onClick={toggleLanguageModal} className="text-white no-underline px-5 py-2 rounded hover:bg-white hover:bg-opacity-30 mb-2">
-                {t('navbar.language')}
-              </button>
-              <LanguageModal
-                isOpen={isLanguageModalOpen}
-                onClose={() => setIsLanguageModalOpen(false)}
-                changeLanguage={changeLanguage}
-                currentLanguage={i18n.language}
-              />
-            </div>
-
+          <button onClick={toggleLanguageModal} className="text-white no-underline px-5 py-2 rounded hover:bg-white hover:bg-opacity-30 mb-2">
+            {t('navbar.language')}
+          </button>
+          <LanguageModal
+            isOpen={isLanguageModalOpen}
+            onClose={() => setIsLanguageModalOpen(false)}
+            changeLanguage={changeLanguage}
+            currentLanguage={i18n.language}
+          />
+        </div>
       )}
     </nav>
   );

@@ -15,7 +15,7 @@ i18n
       escapeValue: false,
     },
     backend: {
-      loadPath: 'https://pet-shelter-8e7e5463f1bc.herokuapp.com/translations/{{lng}}.json',
+      loadPath: 'https://heartfelt-flan-b32b1b.netlify.app/translations/{{lng}}.json',
     },
   });
 
