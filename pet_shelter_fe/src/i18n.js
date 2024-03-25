@@ -15,7 +15,7 @@ i18n
       escapeValue: false,
     },
     backend: {
-      loadPath: 'https://heartfelt-flan-b32b1b.netlify.app/translations/{{lng}}.json',
+      loadPath: 'https://nikolaimelni.pythonanywhere.com/translations/{{lng}}.json',
     },
   });
 
