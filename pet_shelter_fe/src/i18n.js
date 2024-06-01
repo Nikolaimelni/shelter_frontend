@@ -15,7 +15,7 @@ i18n
       escapeValue: false,
     },
     backend: {
-      loadPath: 'https://nikolaimelni.pythonanywhere.com/translations/{{lng}}.json',
+      loadPath: 'https://nikolaymelni.pythonanywhere.com/translations/{{lng}}.json',
     },
   });
 
